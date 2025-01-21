@@ -1,4 +1,4 @@
-<h3 class="cent">動態文字廣告管理</h3>
+<h3 class="cent">新增動態文字廣告管理</h3>
 <hr>
 <form action="api/insert_ad.php" method="post" enctype="multipart/form-data">
     <table>
