@@ -29,15 +29,17 @@
                     ?>
                     <tr>
                         <td width="45%"><img src="./upload/<?=$row['img']; ?>" style="width:300px;height:30px"></td>
-                        <td width="23%"><?=$row['text']; ?></td>
+                        <td width="23%">
+                            <input type="text" name="text[]" value="<?=$row['text']; ?>"></td>
                         <td width="7%">
-                            <input type="radio" name="sh" value="<?=$row['id']; ?>">
+                            <input type="radio" name="sh" value="<?=$row['id']; ?>" <?=($row['sh']==1)?'checked':''; ?>>
                         </td>
                         <td width="7%">
-                            <input type="checkbox" name="del" value="<?=$row['id']; ?>"></td>
+                            <input type="checkbox" name="del[]" value="<?=$row['id']; ?>"></td>
                         <td>
-                            <input type="button" value="更新圖片">
+                            <input type="button" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/update_<?=$do;?>.php?id=<?=$row['id']; ?>&#39;)" value="更新圖片">
                         </td>
+                        <input type="hidden" name="id[]" value="<?=$row['id']; ?>">
                     </tr>
                     <?php
                     }
@@ -49,7 +51,7 @@
                     <tr>
                         <td width="200px">
                             <input type="button"
-                                onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php&#39;)"
+                                onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?id=<?=$row['id']; ?>&#39;)"
                                 value="新增網站標題圖片">
                         </td>
                         <td class="cent">
