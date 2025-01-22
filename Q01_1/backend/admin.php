@@ -12,24 +12,24 @@
         </tbody>
     </table>
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-        <p class="t cent botli">動態文字廣告管理</p>
+        <p class="t cent botli">管理者帳號管理</p>
         <form method="post" target="back" action="./api/edit.php">
             <table width="100%">
                 <tbody>
                     <tr class="yel">
-                        <td width="70%">動態文字廣告</td>
-                        <td width="10%">顯示</td>
+                        <td width="45%">帳號</td>
+                        <td width="45%">密碼</td>
                         <td width="10%">刪除</td>
                     </tr>
                     <?php
-                    $rows=$Ad->all();
+                    $rows=$Admin->all();
                     foreach($rows as $row){
                     ?>
                     <tr>
                         <td>
-                            <input type="text" name="text[]" value="<?=$row['text']; ?>" style="width:95%;"></td>
+                            <input type="text" name="acc[]" value="<?=$row['acc']; ?>"></td>
                         <td>
-                            <input type="checkbox" name="sh[]" value="<?=$row['id']; ?>" <?=($row['sh']==1)?'checked':''; ?>>
+                            <input type="text" name="pw[]" value="<?=$row['pw']; ?>">
                         </td>
                         <td>
                             <input type="checkbox" name="del[]" value="<?=$row['id']; ?>">
@@ -47,7 +47,7 @@
                         <td width="200px">
                             <input type="button"
                                 onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php?table=<?=$do;?>&#39;)"
-                                value="新增動態文字廣告">
+                                value="新增管理者帳號">
                         </td>
                         <td class="cent">
                             <input type="hidden" name="table" value="<?=$do;?>">
