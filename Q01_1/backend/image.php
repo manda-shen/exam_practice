@@ -22,8 +22,15 @@
                         <td width="10%">刪除</td>
                         <td></td>
                     </tr>
-                    <?php
-                    $rows=$Image->all();
+                    <?php 
+
+                    $div=4;
+                    $total=$Image->count();
+                    $pages=ceil($total/$div);
+                    $now=$_GET['p']??1;
+                    $start=($now-1)*$div;
+
+                    $rows=$Image->all(" limit $start,$div");
                     foreach($rows as $row){
                     ?>
                     <tr>
@@ -43,6 +50,33 @@
                     ?>
                 </tbody>
             </table>
+            <a href="">
+
+            </a>
+            <div class="cent">
+                <?php    
+
+                if($now-1>0){
+                    $prev=$now-1;
+                    echo "<a href='?do=$do&p=$prev'>";
+                    echo "<";
+                    echo "</a>";
+                }
+                for($i=1;$i<=$pages;$i++){
+                    echo "<a href='?do=$do&p=$i'>";
+                    echo "$i";
+                    echo "</a>";
+
+                }
+                if(($now+1)<=$pages){
+                    $next=$now+1;
+                    echo "<a href='?do=$do&p=$next'>";
+                    echo ">";
+                    echo "</a>";
+                }
+
+                ?>
+            </div>
             <table style="margin-top:40px; width:70%;">
                 <tbody>
                     <tr>
