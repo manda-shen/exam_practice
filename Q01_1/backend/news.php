@@ -23,7 +23,7 @@
                     </tr>
                     <?php 
 
-                    $div=3;
+                    $div=4;
                     $total=$News->count();
                     $pages=ceil($total/$div);
                     $now=$_GET['p']??1;
@@ -34,7 +34,7 @@
                     ?>
                     <tr>
                         <td>
-                            <textarea name="text[]" style="width:95%;height:60px"><?=$row['text']; ?></textarea>
+                            <textarea name="text[]" style="width:95%;height:55px"><?=$row['text']; ?></textarea>
                         </td>
                         <td>
                             <input type="checkbox" name="sh[]" value="<?=$row['id']; ?>" <?=($row['sh']==1)?'checked':''; ?>>
