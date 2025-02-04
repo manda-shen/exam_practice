@@ -1,3 +1,8 @@
+<?php include_once "db.php"; 
+
+$row=$Menu->all();
+
+?>
 <h3 class="cent">編輯次選單</h3>
 <hr>
 <form action="api/insert.php" method="post" enctype="multipart/form-data" class="cent">
