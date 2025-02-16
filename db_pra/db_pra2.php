@@ -108,7 +108,7 @@ class DB{
     function count($col,$where=[]){
         return $this->math('count',$col,$where);
     }
-    
+
 
 }
 
@@ -125,6 +125,13 @@ function dd($array){
 
 function to($url){
     header("location:".$url);
+}
+
+if(!isset($_SESSION['view'])){
+    $_SESSION['view']=1;
+    $total=$Total->find(1);
+    $total['total']++;
+    $Total->save($total);
 }
 
 
