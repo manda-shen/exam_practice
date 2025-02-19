@@ -142,4 +142,11 @@ dd($Test1->find($row2));
 // $Test1->save($row);
 // $Test1->del($row);
 
+if(isset($_SESSION['view'])){
+    $_SESSION['view']=1;
+    $total=$Total->find(1);
+    $total['total']++;
+    $total->save($total);
+}
+
 ?>
