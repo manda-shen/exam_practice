@@ -4,7 +4,7 @@ $bottom=$Bottom->find(1);
 ?>
 <h3 class="cent">頁尾版權管理</h3>
 <hr>
-<form action="api/update_bottom.php" method="post" enctype="multipart/form-data">
+<form action="api/update_data.php" method="post" enctype="multipart/form-data">
     <table style="margin:auto">
         <tr>
             <td>頁尾版權資料：</td>
