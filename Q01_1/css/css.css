@@ -1,5 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
+*{
+	box-sizing: border-box;
+}
 body
 {
 	padding:0px;
@@ -158,4 +161,12 @@ input:focus,button:focus
 	color:#0CF;
 	cursor:pointer;
 	text-decoration:none;
+}
+
+.mw{
+	position:absolute;
+	left:150px;
+	top:10px;
+	z-index: 99;
+	display: none;
 }

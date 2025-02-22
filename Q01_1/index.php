@@ -8,9 +8,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>卓越科技大學校園資訊系統</title>
-    <link href="./css/css.css" rel="stylesheet" type="text/css">
-    <script src="./jshome_files/jquery-1.9.1.min.js"></script>
-    <script src="./js/js.js"></script>
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/js.js"></script>
 </head>
 
 <body>
@@ -37,11 +37,27 @@
                     </a>
                     <?php
                     $mains=$Menu->all(['sh'=>1,'main_id'=>0]);
+                    
                     foreach($mains as $main){
-                        echo "<div class='mainmu'>";
-                        echo "<a style='color:#000; font-size:13px; text-decoration:none;' href="">";
+                        echo "<div class='mainmu cent'>";
+                        echo "<a href='{$main['href']}'>";
                         echo $main['text'];
+                        echo "</a>";
+                        
+                        echo "<div class='mw'>";
+                        $subs=$Menu->all(['main_id'=>$main['id']]);
+                        if(isset($subs)){
+                            foreach($subs as $sub){
+                                echo "<div class='mainmu2 cent'>";
+                                echo "<a href='{$sub['href']}'>";
+                                echo $sub['text'];
+                                echo "</a>";
+                                echo "</div>";
+                            }
+                        }
                         echo "</div>";
+                        echo "</div>";
+                        
                     }
                     ?>
 
