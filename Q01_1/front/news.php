@@ -39,9 +39,10 @@
             echo "</a>";
         }
         for($i=1;$i<=$pages;$i++){
-            echo "<a href='?do=$do&p=$i'>";
-            echo "$i";
-            echo "</a>";
+            $size=($i==$now)?"20px":"14px";
+            echo "&nbsp;" . "<a href='?do=$do&p=$i' style='font-size:$size'>";
+            echo $i;
+            echo "</a>" . "&nbsp;";
         
         }
         if(($now+1)<=$pages){

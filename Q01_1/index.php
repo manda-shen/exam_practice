@@ -32,8 +32,6 @@
                     <!--主選單放此-->
                     <span class="t botli">主選單區</span>
                     <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=title">
-                        <div class="mainmu">
-                        </div>
                     </a>
                     <?php
                     $mains=$Menu->all(['sh'=>1,'main_id'=>0]);
@@ -86,13 +84,49 @@
 
             <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
                 <!--右邊-->
+                <?php
+                if(isset($_SESSION['login'])){
+                ?>
                 <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
-                    onclick="lo('?do=login')">管理登入</button>
-                <div style="width:89%; height:480px;" class="dbor">
+                    onclick="lo('admin.php')">返回管理</button>
+                <?php
+                }else{
+                ?>
+                <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
+                onclick="lo('?do=login')">管理登入</button>
+                <?php    
+                }
+                ?>
+                <style>
+                    .img{
+                        width: 150px;
+                        height: 130px;
+                    }
+
+                    #up, #dn{
+                        font-size:20px;
+                    }
+
+                    #up, #dn:hover{
+                        cursor: pointer;
+                    }
+                </style>
+                <div style="width:89%; height:480px;" class="dbor cent">
                     <span class="t botli">校園映象區</span>
+                    <div id="up" onclick="pp(1)">▲</div>
+                    <?php
+                    $imgs=$Image->all(['sh'=>1]);
+                    foreach($imgs as $idx => $img):
+                        $show=$img['img'];
+                    ?>
+                    <div id="ssaa<?=$idx;?>" class="im"><img src="upload/<?=$show;?>" alt="" class="img"></div>
+                    <?php
+                    endforeach;
+                    ?>
+                    <div id="dn" onclick="pp(2)">▼</div>
                     <script>
                     var nowpage = 0,
-                        num = 0;
+                        num = <?=$Image->count(['sh'=>1]);?>;
 
                     function pp(x) {
                         var s, t;
