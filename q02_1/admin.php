@@ -24,7 +24,7 @@
 			?>
 			
 			<?=date("m");?> 月 <?=date("d");?> 號 <?=date("l");?> | 今日瀏覽: 1 | 累積瀏覽: 36 
-			<span style="float:right;"><a href="?">回首頁</a></span>
+			<span style="float:right;"><a href="index.php">回首頁</a></span>
 		</div>
 		<div id="title2">
 			<a href="?"><img src="./icon/02B01.jpg" alt="健康促進網 - 回首頁" title="健康促進網 - 回首頁"></a>
@@ -50,12 +50,12 @@
 				</div>
 				
 				<?php
-				$do=$_GET['do']??'';
+				$do=$_GET['do']??'main';
 				$file="back/".$do.".php";
 				if(file_exists($file)){
 					include $file;
 				}else{
-					echo "<div class='ct'><h1>請選擇管理項目</h1></div>";
+					include "back/main.php";
 				}
 				?>
 			</div>

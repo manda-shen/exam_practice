@@ -82,10 +82,12 @@ class DB{
 
     protected function math($math,$col='id',$where=[]){
         $sql="SELECT $math($col) FROM $this->table";
-        if(isset($where)){
+
+        if(!empty($where)){
             $tmp=$this->a2s($where);
-            $sql .= " WHERE " . join(" && ",$tmp);
+            $sql=$sql . " WHERE " . join(" && ", $tmp);
         }
+
         return $this->pdo->query($sql)->fetchColumn();
     }
 
@@ -105,7 +107,7 @@ class DB{
         return $this->math('avg',$col,$where);
     }
 
-    function count($sql,$where=[]){
+    function count($col,$where=[]){
         return $this->math('count',$col,$where);
     }
 
@@ -128,11 +130,19 @@ function to($url){
 }
 
 
-if(isset($_SESSION['view'])){
+$Total=new DB('total');
+
+
+
+if(!isset($_SESSION['view'])){
+    if($Total->count(['date'=>date("Y-m-d")])>0){
+        $total=$Total->find(['date'=>date("Y-m-d")]);
+        $total['total']++;
+        $Total->save($total);
+    }else{
+        $Total->save(['date'=>date("Y-m-d"),'total'=>1]);
+    }
     $_SESSION['view']=1;
-    $total=$Total->find(1);
-    $total['total']++;
-    $Total->save($total);
 }
 
 

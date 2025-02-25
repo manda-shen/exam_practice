@@ -37,7 +37,7 @@ a:hover {
 }
 
 #mm {
-	min-height: 570px;
+	min-height: 525px;
 }
 
 #all {
@@ -51,22 +51,31 @@ a:hover {
 }
 
 #title {
-	height: 15px;
-	padding: 1px;
-	font-size: 10px;
-	color: #999;
+	width: 1004px;
+    height: 15px;
+    margin: auto;
+    padding: 1px;
+    font-size: 10px;
+    color: #999;
+}
+
+#title2 {
+    width: 1004px;
+    overflow: hidden;
+    margin: auto;
 }
 
 #lef {
 	width: 18.2%;
-	padding: 2px;
-	background: url(../icon/02B04.png) repeat-y;
-	/*background-size:100% auto;*/
-	min-height: 568px;
-	display: inline-block;
-	vertical-align: top;
-	position: relative;
-	top: -3px;
+    padding: 2px;
+    background: url(../icon/02B04.png) repeat-y;
+    /* background-size: 100% auto; */
+    min-height: 535px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: -3px;
+    left: 10px;
 }
 
 #mm {
@@ -74,14 +83,14 @@ a:hover {
 }
 
 #main {
-	display: inline-block;
-	width: 78%;
-	height: 565px;
-	padding: 4px;
-	border: solid 1px #000000;
-	overflow: auto;
-	position: relative;
-	left: 1%;
+    display: inline-block;
+    width: 78%;
+    height: 525px;
+    padding: 4px;
+    border: solid 1px #000000;
+    overflow: auto;
+    position: relative;
+    left: 1%;
 }
 
 #lef a {
@@ -90,11 +99,11 @@ a:hover {
 
 #bottom {
 	position: absolute;
-	padding: 16px;
-	right: -10px;
-	bottom: -10px;
-	font-size: 14px;
-	text-align: right;
+    padding: 16px;
+    right: 5px;
+    bottom: 10px;
+    font-size: 14px;
+    text-align: right;
 
 }
 
