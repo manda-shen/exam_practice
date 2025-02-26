@@ -63,8 +63,9 @@ class DB{
             $sql="UPDATE $this->table SET " . join(",",$set) . " WHERE `id`='$id'";
         }else{
             $keys=array_keys($array);
-            $sql="INSERT INTO $this->table`(" . join("`, `",$keys) . ") VALUES ('" . join("','",$array) . "')";
+            $sql="INSERT INTO $this->table(`" . join("`, `",$keys) . "`) VALUES ('" . join("','",$array) . "')";
         }
+        // echo $sql;
         return $this->pdo->exec($sql);
     }
 
@@ -82,12 +83,11 @@ class DB{
 
     protected function math($math,$col='id',$where=[]){
         $sql="SELECT $math($col) FROM $this->table";
-
         if(!empty($where)){
             $tmp=$this->a2s($where);
             $sql=$sql . " WHERE " . join(" && ", $tmp);
         }
-
+        // echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
 
@@ -107,8 +107,8 @@ class DB{
         return $this->math('avg',$col,$where);
     }
 
-    function count($col,$where=[]){
-        return $this->math('count',$col,$where);
+    function count($where=[]){
+        return $this->math('count','*',$where);
     }
 
 
@@ -131,8 +131,6 @@ function to($url){
 
 
 $Total=new DB('total');
-
-
 
 if(!isset($_SESSION['view'])){
     if($Total->count(['date'=>date("Y-m-d")])>0){
