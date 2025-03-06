@@ -19,9 +19,66 @@
     }
 </style>
 
+<?php
+
+if(isset($_SESSION['login'])){
+    to("admin.php");
+    exit();
+}
+
+if(isset($_POST['acc'])){
+    $row=$User->find(['acc'=>$_POST['acc'],'pw'=>$_POST['pw']]);    
+    if(!empty($row)){
+
+        if($_POST['acc']=="admin"){
+            $_SESSION['login']=2;
+            to("admin.php");
+        }else{
+            $_SESSION['login']=1;
+            to("index.php");
+        }
+
+    }else{
+        $acc=$User->find(['acc'=>$_POST['acc']]);
+        if(!empty($acc)){
+            echo "<script>alert('密碼錯誤')</script>";
+        }else{
+            echo "<script>alert('查無帳號')</script>";
+        }
+    }
+}
+
+
+// if(isset($_SESSION['login'])){
+    
+//     // if($_POST['acc']=="admin"){
+//         to("admin.php");
+//         exit();
+//     // }else{
+//     //     to("index.php");
+//     //     exit();
+//     // }
+// }
+
+// if(isset($_POST[['acc']])){
+//     $row=$User->find(['acc'=>$_POST['acc'],'pw'=>$_POST['pw']]);
+//     if(!empty($row)){
+//         $_SESSION['login']=1;
+//     }else{
+//         $acc=$User->find(['acc'=>$_POST['acc']]);
+//         if(!empty($acc)){
+//             echo "<script>alert('密碼錯誤')</script>";
+//         }else{
+//             echo "<script>alert('查無帳號')</script>";
+//         }
+//     }
+// }
+
+?>
+
 <fieldset class=login>
     <legend>會員登入</legend>
-    <form action="./api/login.php" method="post">
+    <form action="?do=login" method="post">
         <div class="input_padding">
             <label for="acc">帳號</label>
             <input type="text" name="acc" id="acc">

@@ -31,7 +31,8 @@
 	margin: 0px;
 	padding: 0px;
 	clear: none;
-	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+	width: 100%;
+	/* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
 }
 
 /* This is the selector for the TabGroup. The TabGroup container houses
@@ -103,7 +104,7 @@
  * content panel so that it looks like the tab is part of the content panel.
  */
 .TabbedPanelsTabSelected {
-	background-color: #EEE;
+	background-color: #ffffff;
 	border-bottom: 1px solid #EEE;
 }
 
@@ -132,7 +133,7 @@
 	border-bottom: solid 1px #CCC;
 	border-top: solid 1px #999;
 	border-right: solid 1px #999;
-	background-color: #EEE;
+	background-color: #ffffff;
 }
 
 /* This is the selector for the Content panel. The Content panel holds the
@@ -154,8 +155,7 @@
  * programatically added and removed from the content element as the panel
  * is activated/deactivated.
  */
-.TabbedPanelsContentVisible {
-}
+.TabbedPanelsContentVisible {}
 
 /* Vertical Tabbed Panels
  *
@@ -182,7 +182,7 @@
 	float: left;
 	width: 10em;
 	height: 20em;
-	background-color: #EEE;
+	background-color: #ffffff;
 	position: relative;
 	border-top: solid 1px #999;
 	border-right: solid 1px #999;
@@ -226,22 +226,25 @@
 
 /* Styles for Printing */
 @media print {
-.TabbedPanels {
-	overflow: visible !important;
-}
-.TabbedPanelsContentGroup {
-	display: block !important;
-	overflow: visible !important;
-	height: auto !important;
-}
-.TabbedPanelsContent {
-	overflow: visible !important;
-	display: block !important;
-	clear:both !important;
-}
-.TabbedPanelsTab {
-	 overflow: visible !important;
-	 display: block !important;
-	 clear:both !important;
-}
+	.TabbedPanels {
+		overflow: visible !important;
+	}
+
+	.TabbedPanelsContentGroup {
+		display: block !important;
+		overflow: visible !important;
+		height: auto !important;
+	}
+
+	.TabbedPanelsContent {
+		overflow: visible !important;
+		display: block !important;
+		clear: both !important;
+	}
+
+	.TabbedPanelsTab {
+		overflow: visible !important;
+		display: block !important;
+		clear: both !important;
+	}
 }
