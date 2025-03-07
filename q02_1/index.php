@@ -62,13 +62,9 @@
 					</div>
 				</div>
 				<?php
-				$do=$_GET['do']??'main2';
+				$do=$_GET['do']??'main3';
 				$file="front/".$do.".php";
-				if(file_exists($file)){
-					include $file;
-				}else{
-					include "front/main2.php";
-				}
+				include $file;
 				?>
 			</div>
 		</div>

@@ -104,7 +104,7 @@
  * content panel so that it looks like the tab is part of the content panel.
  */
 .TabbedPanelsTabSelected {
-	background-color: #ffffff;
+	background-color: #EEE;
 	border-bottom: 1px solid #EEE;
 }
 
@@ -133,7 +133,7 @@
 	border-bottom: solid 1px #CCC;
 	border-top: solid 1px #999;
 	border-right: solid 1px #999;
-	background-color: #ffffff;
+	background-color: #EEE;
 }
 
 /* This is the selector for the Content panel. The Content panel holds the
@@ -182,7 +182,7 @@
 	float: left;
 	width: 10em;
 	height: 20em;
-	background-color: #ffffff;
+	background-color: #EEE;
 	position: relative;
 	border-top: solid 1px #999;
 	border-right: solid 1px #999;
