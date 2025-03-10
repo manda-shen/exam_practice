@@ -16,10 +16,10 @@
     <li class="TabbedPanelsTab" tabindex="0">慢性病防治</li>
   </ul>
   <div class="TabbedPanelsContentGroup">
-    <div class="TabbedPanelsContent"><pre><?php include "./text/health.php" ?></pre></div>
-    <div class="TabbedPanelsContent"><pre><?php include "./text/smoke.php" ?></pre></div>
-    <div class="TabbedPanelsContent"><pre><?php include "./text/cancer.php" ?></pre></div>
-    <div class="TabbedPanelsContent"><pre><?php include "./text/sick.php" ?></pre></div>
+    <div class="TabbedPanelsContent"><h3>健康新知</h3><pre><?php include "./text/health.php" ?></pre></div>
+    <div class="TabbedPanelsContent"><h3>菸害防治</h3><pre><?php include "./text/smoke.php" ?></pre></div>
+    <div class="TabbedPanelsContent"><h3>癌症防治</h3><pre><?php include "./text/cancer.php" ?></pre></div>
+    <div class="TabbedPanelsContent"><h3>慢性病防治</h3><pre><?php include "./text/sick.php" ?></pre></div>
   </div>
 </div>
 <script type="text/javascript">

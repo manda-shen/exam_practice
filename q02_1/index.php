@@ -62,7 +62,7 @@
 					</div>
 				</div>
 				<?php
-				$do=$_GET['do']??'main3';
+				$do=$_GET['do']??'main2';
 				$file="front/".$do.".php";
 				include $file;
 				?>

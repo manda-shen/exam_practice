@@ -30,6 +30,12 @@
 </fieldset>
 
 <?php
+if(isset($_POST['acc'])){
+    
+
+}
+
+
 
     
     // if(!isset($_POST['acc']) || !isset($_POST['pw']) || !isset($_POST['pw2']) || !isset($_POST['email'])){
