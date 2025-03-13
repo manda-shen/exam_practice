@@ -44,12 +44,22 @@
 			<div class="hal" id="main">
 				<div>
 					
-					<span style="width:90%; display:inline-block;">
+					<span style="width:82%; display:inline-block;">
 					<marquee behavior="" direction="">請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享的園地！詳見最新文章</marquee>
 					<?php
+
 					if(isset($_SESSION['login'])){
+						if($_SESSION['login']==1){
 					?>					
-					<a href="./api/logout.php" style="position:absolute; right:5px;">登出</a>
+					<a href="./api/logout.php" style="position:absolute; right:5px;">歡迎，<?=$_SESSION['user'];?><button>登出</button></a>
+					<?php
+					}else if($_SESSION['login']==2){
+					?>
+					<a href="./api/logout.php" style="position:absolute; right:5px;"><button>登出</button></a>
+					<a href="admin.php" style="position:absolute; right:40px;"><button>返回管理</button></a>
+					<?php
+					}
+					?>
 					<?php
 					}else{
 					?>

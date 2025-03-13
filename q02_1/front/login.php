@@ -35,6 +35,7 @@ if(isset($_POST['acc'])){
             to("admin.php");
         }else{
             $_SESSION['login']=1;
+            $_SESSION['user']=$_POST['acc'];
             to("index.php");
         }
 

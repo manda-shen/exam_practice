@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html
+﻿<?php include_once "./api/db.php"; ?>
+<!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0039) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,8 +24,9 @@
 			// echo date("m");
 			?>
 			
-			<?=date("m");?> 月 <?=date("d");?> 號 <?=date("l");?> | 今日瀏覽: 1 | 累積瀏覽: 36 
-			<span style="float:right;"><a href="index.php">回首頁</a></span>
+			<?=date("m 月 d 號 l");?> | 今日瀏覽: <?=$Total->find(['date'=>date("Y-m-d")])['total'];?>
+			                          | 累積瀏覽: <?=$Total->sum('total');?>
+			<span style="float:right;"><a href="?">回首頁</a></span>
 		</div>
 		<div id="title2">
 			<a href="?"><img src="./icon/02B01.jpg" alt="健康促進網 - 回首頁" title="健康促進網 - 回首頁"></a>
@@ -42,8 +44,15 @@
 					
 					<span style="width:90%; display:inline-block;">
 					<marquee behavior="" direction="">請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享的園地！詳見最新文章</marquee>
-						<a href="?do=login" style="position:absolute; right:5px;">會員登入</a>
-						<a href="?do=login" style="position:absolute; right:5px;">會員登入</a>
+					<?php
+					if(isset($_SESSION['login']) && $_SESSION['login']==2){
+					?>
+					<a href=".api/logout.php" style="position:absolute; right:5px;"><button>登出</button></a>
+					<?php
+					}else{
+						to("index.php");
+					}
+					?>
 					</span>
 					<div class="">
 					</div>
