@@ -1,15 +1,25 @@
-<div>目前位置：首頁 > 分類網誌 > 健康新知</div>
+<style>
+    .news{
+        width: 95%;
+    }
+</style>
 
-<div style="direction:row;">
+<fieldset>
+    <legend>目前位置：首頁 > 最新文章區</legend>
+    <?php
+    
+    ?>
     <div>
-    <legend>分類網誌</legend>
+        <table class="news">
+            <tr>
+                <th width="30%">標題</th>
+                <th>內容</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
     </div>
-    <div>
-        <?php
-        $rows=$News->all();
-        foreach($rows as $row):
-        ?>
-        <p><?=$row['type'];?></p>
-        <?php endforeach; ?>
-    </div>
-</div>
+
+</fieldset>

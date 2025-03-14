@@ -47,7 +47,7 @@
 					<?php
 					if(isset($_SESSION['login']) && $_SESSION['login']==2){
 					?>
-					<a href=".api/logout.php" style="position:absolute; right:5px;"><button>登出</button></a>
+					<a href="./api/logout.php" style="position:absolute; right:5px;"><button>登出</button></a>
 					<?php
 					}else{
 						to("index.php");
